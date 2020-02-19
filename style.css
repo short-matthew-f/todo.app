@@ -178,6 +178,7 @@ main {
 
 .todo pre {
   font-family: sans-serif;
+  white-space: pre-wrap;
   padding: 16px 8px;
 }
 

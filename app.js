@@ -113,7 +113,39 @@ function storeData() {
 }
 
 function retrieveData() {
-  allTodos = JSON.parse(localStorage.getItem('allTodos')) || [];
+  allTodos = JSON.parse(localStorage.getItem('allTodos')) || fetchOnboardingTodos();
+}
+
+function fetchOnboardingTodos() {
+  let tomorrow = new Date()
+  tomorrow.setDate( tomorrow.getDate() + 1 )
+
+  return [
+    { 
+      title: 'Open the left drawer', 
+      dueDate: tomorrow.toLocaleString(), 
+      description: "Click on the left below the icons to expand the left drawer\n\nWhen you're done, click complete on this todo.", 
+      isComplete: false 
+    },
+    {
+      title: 'Make a new Todo',
+      dueDate: tomorrow.toLocaleString(),
+      description: "Click the plus symbol\n\nThen, fill out the form that pops up and click CREATE",
+      isComplete: false
+    },
+    {
+      title: 'Make an expired Todo',
+      dueDate: tomorrow.toLocaleString(),
+      description: "Click the plus symbol\n\nThen, fill out the form that pops up and click CREATE\n\nMake sure to use a date in the past!",
+      isComplete: false
+    },
+    {
+      title: 'Clear completed or expired Todos',
+      dueDate: tomorrow.toLocaleString(),
+      description: "The checkmark and sweep symbols are for clearing completed or expired todos, respectively.\n\nUse them now.",
+      isComplete: false
+    }
+  ]
 }
 
 function splitTodos() {
