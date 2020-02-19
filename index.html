@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Tomorrow|Noto+Sans&display=swap" rel="stylesheet">
+    <!-- jQuery and jQuery-ui -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- our hard work below -->
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <span>TODO.APP</span>
+      </header>
+      <aside class="left-drawer">
+        <button class="action add-todo">
+          <i class="material-icons">add_circle</i>
+          <span class="action-text">Create New Todo</span>
+        </button>
+        <button class="action remove-completed">
+          <i class="material-icons">check_circle</i>
+          <span class="action-text">Remove Completed Todos</span>
+        </button>
+        <button class="action remove-expired">
+          <i class="material-icons">delete_sweep</i>
+          <span class="action-text">Remove Expired Todos</span>
+        </button>
+      </aside>
+      <main>
+        <section class="accordion">
+          <h3 class="title">One</h3>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla molestias, dolor aspernatur quo, tempore fuga deleniti doloremque dolore nihil harum praesentium rem quae? Ea aliquam, corporis fugit recusandae rerum repellendus!</p>
+            <p>Vel ad enim esse fugiat voluptatibus ut quae provident aspernatur, minus nobis. Doloremque natus totam ex placeat eum, maxime commodi, maiores iure adipisci dolore unde et suscipit repudiandae ratione nostrum?</p>
+            <p>Consectetur veritatis possimus ea quasi, voluptates recusandae neque rerum placeat minima est quos modi optio perspiciatis cupiditate. Nemo sit dolorem error sunt quos laborum sapiente? Quis, tempore? Rem, deleniti delectus!</p>
+            <p>Vel eos natus asperiores sequi cumque? Soluta, eius corrupti. Aut dicta eos sed error est natus, nostrum, vero soluta reiciendis distinctio necessitatibus tempora. Quo, pariatur ipsum dolorum accusantium obcaecati eligendi.</p>
+            <p>Animi nulla perferendis architecto mollitia amet sint temporibus veritatis perspiciatis quisquam eius sed, dolore debitis, vitae doloribus magnam adipisci voluptatum eaque blanditiis eos recusandae doloremque placeat? Ex non voluptate nam.</p>
+          </div>
+          <h3 class="title">Two</h3>
+          <div class="content">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, debitis expedita fuga architecto totam asperiores voluptatum omnis, aliquid accusamus obcaecati atque deserunt tempore beatae inventore quam exercitationem ipsum perspiciatis. Molestias!</p>
+            <p>Error accusantium veniam, delectus cupiditate sed at debitis ab a dolorum eos mollitia natus? Architecto mollitia, quibusdam sequi dicta maxime quasi dolorum sapiente optio expedita voluptas nostrum assumenda esse quas.</p>
+            <p>Minima quod officia impedit quae, laborum quis alias in itaque assumenda corporis illo numquam tempore unde placeat! Magni, provident corrupti aliquid ullam modi hic, ut expedita blanditiis assumenda, a totam!</p>
+            <p>Fugit unde tempore ut necessitatibus hic sint veniam. Quod iure sequi assumenda laboriosam magnam blanditiis praesentium eligendi, minus, consequatur voluptatibus soluta nemo sapiente tenetur accusamus rem, quia exercitationem necessitatibus voluptates.</p>
+          </div>
+          <h3 class="title">Three</h3>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, eius voluptatem, quo recusandae eaque nisi voluptas iste blanditiis quae ullam, esse tempore est aut nostrum totam quaerat beatae fugiat velit!</p>
+            <p>Tenetur excepturi et similique, alias quas soluta dolores reiciendis aspernatur itaque veritatis consequatur perferendis. Nihil corrupti, quia, id quis temporibus qui soluta, quaerat excepturi pariatur odit ad perferendis odio facere.</p>
+            <p>Saepe non adipisci odio beatae esse quae voluptate, expedita sequi, fugit temporibus optio unde quia ratione animi impedit assumenda et sint! Quos in blanditiis, amet veniam cumque consequatur enim nobis!</p>
+            <p>Dolores cumque, non dicta, dolor tenetur a qui, voluptatum vel laborum repellat quod nulla voluptas tempore iure ipsam odio totam libero alias impedit sunt fugit. Adipisci deserunt est vero asperiores!</p>
+            <p>At nihil hic minus consequatur assumenda aperiam, nemo et, corrupti aliquam animi praesentium ipsa nisi a? Earum, amet dolore, mollitia consectetur aspernatur unde impedit facilis rem error, cum quas ea!</p>
+            <p>Minima praesentium libero odit itaque ipsum eveniet soluta unde error eaque sunt excepturi voluptatum corrupti, impedit vel obcaecati corporis est possimus? Reiciendis quam repellendus ab eaque quis. Cupiditate, dolore doloremque.</p>
+          </div>
+        </section>
+      </main>
+      <div class="modal">
+        <div class="content">
+          <h3>Create New Todo</h3>
+          <form class="todo-form">
+            <label for="todo-title">Todo Title</label>
+            <input name="title" type="text" id="todo-title" required>
+            <label for="todo-due-date">Due Date</label>
+            <input name="dueDate" type="date" id="todo-due-date" required>
+            <label for="todo-description">Description</label>
+            <textarea required name="description" id="todo-description" columns="40" rows="5"></textarea>
+          </form>
+          <div class="actions">
+            <button class="action create-todo">
+              <i class="material-icons">add_circle</i>
+              <span class="action-text">Create</span>
+            </button>
+            <button class="action cancel-todo">
+              <i class="material-icons">cancel</i>
+              <span class="action-text">Cancel</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
