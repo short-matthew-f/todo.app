@@ -30,54 +30,46 @@
         </button>
       </aside>
       <main>
-        <section class="accordion">
-          <h3 class="title">One</h3>
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla molestias, dolor aspernatur quo, tempore fuga deleniti doloremque dolore nihil harum praesentium rem quae? Ea aliquam, corporis fugit recusandae rerum repellendus!</p>
-            <p>Vel ad enim esse fugiat voluptatibus ut quae provident aspernatur, minus nobis. Doloremque natus totam ex placeat eum, maxime commodi, maiores iure adipisci dolore unde et suscipit repudiandae ratione nostrum?</p>
-            <p>Consectetur veritatis possimus ea quasi, voluptates recusandae neque rerum placeat minima est quos modi optio perspiciatis cupiditate. Nemo sit dolorem error sunt quos laborum sapiente? Quis, tempore? Rem, deleniti delectus!</p>
-            <p>Vel eos natus asperiores sequi cumque? Soluta, eius corrupti. Aut dicta eos sed error est natus, nostrum, vero soluta reiciendis distinctio necessitatibus tempora. Quo, pariatur ipsum dolorum accusantium obcaecati eligendi.</p>
-            <p>Animi nulla perferendis architecto mollitia amet sint temporibus veritatis perspiciatis quisquam eius sed, dolore debitis, vitae doloribus magnam adipisci voluptatum eaque blanditiis eos recusandae doloremque placeat? Ex non voluptate nam.</p>
-          </div>
-          <h3 class="title">Two</h3>
-          <div class="content">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, debitis expedita fuga architecto totam asperiores voluptatum omnis, aliquid accusamus obcaecati atque deserunt tempore beatae inventore quam exercitationem ipsum perspiciatis. Molestias!</p>
-            <p>Error accusantium veniam, delectus cupiditate sed at debitis ab a dolorum eos mollitia natus? Architecto mollitia, quibusdam sequi dicta maxime quasi dolorum sapiente optio expedita voluptas nostrum assumenda esse quas.</p>
-            <p>Minima quod officia impedit quae, laborum quis alias in itaque assumenda corporis illo numquam tempore unde placeat! Magni, provident corrupti aliquid ullam modi hic, ut expedita blanditiis assumenda, a totam!</p>
-            <p>Fugit unde tempore ut necessitatibus hic sint veniam. Quod iure sequi assumenda laboriosam magnam blanditiis praesentium eligendi, minus, consequatur voluptatibus soluta nemo sapiente tenetur accusamus rem, quia exercitationem necessitatibus voluptates.</p>
-          </div>
-          <h3 class="title">Three</h3>
-          <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, eius voluptatem, quo recusandae eaque nisi voluptas iste blanditiis quae ullam, esse tempore est aut nostrum totam quaerat beatae fugiat velit!</p>
-            <p>Tenetur excepturi et similique, alias quas soluta dolores reiciendis aspernatur itaque veritatis consequatur perferendis. Nihil corrupti, quia, id quis temporibus qui soluta, quaerat excepturi pariatur odit ad perferendis odio facere.</p>
-            <p>Saepe non adipisci odio beatae esse quae voluptate, expedita sequi, fugit temporibus optio unde quia ratione animi impedit assumenda et sint! Quos in blanditiis, amet veniam cumque consequatur enim nobis!</p>
-            <p>Dolores cumque, non dicta, dolor tenetur a qui, voluptatum vel laborum repellat quod nulla voluptas tempore iure ipsam odio totam libero alias impedit sunt fugit. Adipisci deserunt est vero asperiores!</p>
-            <p>At nihil hic minus consequatur assumenda aperiam, nemo et, corrupti aliquam animi praesentium ipsa nisi a? Earum, amet dolore, mollitia consectetur aspernatur unde impedit facilis rem error, cum quas ea!</p>
-            <p>Minima praesentium libero odit itaque ipsum eveniet soluta unde error eaque sunt excepturi voluptatum corrupti, impedit vel obcaecati corporis est possimus? Reiciendis quam repellendus ab eaque quis. Cupiditate, dolore doloremque.</p>
-          </div>
+        <section class="todo-list">
+          <h3 class="list-title">Pending Todos</h3>
+          <div class="content pending-todos"></div>
+        </section>
+        <section class="todo-list">
+          <h3 class="list-title">Completed Todos</h3>
+          <div class="content completed-todos"></div>
+        </section>
+        <section class="todo-list">    
+          <h3 class="list-title">Expired Todos</h3>
+          <div class="content expired-todos"></div>
         </section>
       </main>
       <div class="modal">
         <div class="content">
           <h3>Create New Todo</h3>
-          <form class="todo-form">
+          <form class="todo-form" action="" method="">
             <label for="todo-title">Todo Title</label>
-            <input name="title" type="text" id="todo-title" required>
+            <input type="text" id="todo-title" required>
+            <h5>This is a required field</h5>
             <label for="todo-due-date">Due Date</label>
-            <input name="dueDate" type="date" id="todo-due-date" required>
+            <input type="date" id="todo-due-date" required>
+            <h5>This is a required field</h5>
             <label for="todo-description">Description</label>
-            <textarea required name="description" id="todo-description" columns="40" rows="5"></textarea>
+            <textarea id="todo-description" columns="40" rows="5"></textarea>
+            <div class="actions">
+              <button class="action create-todo when-valid">
+                <i class="material-icons">add_circle</i>
+                <span class="action-text">Create</span>
+              </button>
+              <button disabled class="action create-todo when-invalid">
+                <i class="material-icons">add_circle</i>
+                <span class="action-text">Create</span>
+              </button>
+              <button class="action cancel-create-todo">
+                <i class="material-icons">cancel</i>
+                <span class="action-text">Cancel</span>
+              </button>
+            </div>
           </form>
-          <div class="actions">
-            <button class="action create-todo">
-              <i class="material-icons">add_circle</i>
-              <span class="action-text">Create</span>
-            </button>
-            <button class="action cancel-todo">
-              <i class="material-icons">cancel</i>
-              <span class="action-text">Cancel</span>
-            </button>
-          </div>
         </div>
       </div>
     </div>

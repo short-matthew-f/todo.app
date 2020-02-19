@@ -12,8 +12,8 @@ body {
 #app {
   display: grid;
 
-  grid-template-rows: auto 1fr;
-  grid-template-columns: auto 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr);
 
   height: 100%;
   max-height: 100%;
@@ -35,7 +35,6 @@ header {
   
   background: #1b1b1b;
   color: #fafafa;
-  border-bottom: 1px solid #888;
 }
 
 .left-drawer {
@@ -114,39 +113,84 @@ main {
   grid-row: 2;
   grid-column: 2;
 
-  background: #fafafa;
+  background: #88b;
   font-size: 16px;
 
   padding: 8px;
+  
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-.ui-accordion {
+.todo-list {
   font-family: 'Noto Sans', sans-serif;
+  min-width: 300px;
+
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  overflow-y: hidden;
 }
 
-.ui-accordion .ui-accordion-header {
+.todo-list .list-title {
   padding: 0.5em;
   background: #66c;
   color: #fff;
-  border-radius: 0;
-  margin: 0;
-  position: relative;
+  text-align: center;
+  font-size: 18px;
 }
 
-.ui-accordion .ui-accordion-header:not(:first-of-type) {
-  margin-top: 6px;
-}
-
-.ui-accordion .ui-accordion-header:hover {
-  background: #44b;
-  cursor: pointer;
-}
-
-.ui-accordion .ui-accordion-content {
+.todo-list .content {
   padding: 0.5em;
   background: #ccf;
-  border-radius: 0;
-  margin: 0;
+  overflow-y: scroll;
+}
+
+.todo {
+  border: 1px solid #33f;
+  background: #fafafa;
+  box-shadow: 0 3px 8px -3px black;
+}
+
+.todo:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+.todo h3 {
+  padding: 8px;
+  background: #ddf;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo h3 .title {
+  font-size: 1em;
+  color: #111;
+}
+
+.todo h3 .due-date {
+  font-size: .7em;
+  color: #777;
+}
+
+.todo pre {
+  font-family: sans-serif;
+  padding: 16px 8px;
+}
+
+.todo .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: #ddf;
+  padding: 8px;
+}
+
+.todo .actions .action:not(:first-of-type) {
+  margin-left: 8px;
 }
 
 .modal:not(.open) {
@@ -212,9 +256,14 @@ main {
   cursor: pointer;
 }
 
-.modal .action:hover {
+.modal .action.when-invalid {
+  background: #777;
+}
+
+.modal .action:not(.when-invalid):hover {
   background: #33f;
 }
+
 
 .modal .action:not(:first-of-type) {
   margin-left: 12px;
@@ -225,4 +274,20 @@ main {
   font-weight: bold;
   letter-spacing: 1.1;
   text-transform: uppercase;
+}
+
+.modal input:invalid:required {
+  border-bottom: 3px solid red;
+}
+
+.modal input:valid:required + h5 {
+  display: none;
+}
+
+.todo-form:invalid .when-valid {
+  display: none;
+}
+
+.todo-form:valid .when-invalid {
+  display: none;
 }
