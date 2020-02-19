@@ -54,9 +54,11 @@ $('.cancel-create-todo').click(function (event) {
 })
 
 function createTodoFromForm( form ) {
+  const dueDate = new Date(form.find('#todo-due-date').val())
+
   return {
     title: form.find('#todo-title').val(),
-    dueDate: form.find('#todo-due-date').val(),
+    dueDate: dueDate.toLocaleString(),
     description: form.find('#todo-description').val(),
     isComplete: false,
   };
